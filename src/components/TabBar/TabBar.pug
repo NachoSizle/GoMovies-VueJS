@@ -1,0 +1,12 @@
+.tab--bar--container
+  .page
+    router-view
+  .tabs--container
+    .tab(
+      v-for='tab in tabs'
+      :key='tab.id'
+    )
+      routerLink(
+        :to='tab.to'
+      )
+        | {{ tab.title }}
