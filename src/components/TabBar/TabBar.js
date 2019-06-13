@@ -1,6 +1,10 @@
+import Tab from './components/Tab/Tab.vue';
+
 export default {
-  name: 'App',
-  components: {},
+  name: 'TabBar',
+  components: {
+    Tab
+  },
   data: function () {
     return {
       tabs: [

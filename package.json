@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
     "@vue/eslint-config-standard": "^4.0.0",
@@ -27,6 +28,7 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
+    "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.6.10"
   }
 }
