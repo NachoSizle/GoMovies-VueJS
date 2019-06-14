@@ -1,2 +1,7 @@
 .home
   h1 Favorites Movies
+  .movie(
+    v-for='movie in userMovies.favorites'
+    :key='movie.uid'
+  )
+    p {{ movie.Title }}

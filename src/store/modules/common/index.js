@@ -2,7 +2,10 @@ export default {
   namespaced: true,
   state: {
     token: '',
-    user: null
+    user: {
+      uid: '',
+      displayName: ''
+    }
   },
   mutations: {
     setToken (state, payload) {
@@ -10,14 +13,23 @@ export default {
       localStorage.setItem('token', payload)
     },
     setUser (state, payload) {
-      state.user = payload
+      state.user = {
+        uid: payload.uid,
+        displayName: payload.displayName
+      }
+      let userParsed = JSON.stringify(payload)
+      localStorage.setItem('user', userParsed)
     },
     removeToken (state) {
       state.token = ''
       localStorage.removeItem('token')
     },
     removeUser (state) {
-      state.user = null
+      state.user = {
+        uid: '',
+        displayName: ''
+      }
+      localStorage.removeItem('user')
     }
   },
   actions: {
@@ -35,6 +47,9 @@ export default {
     }
   },
   getters: {
+    userId (state) {
+      return state.user.uid
+    },
     isLogged (state) {
       return state.token !== ''
     }
