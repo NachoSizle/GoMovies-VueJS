@@ -1,9 +1,8 @@
-.tab--bar--container
-  .tabs--container
-    .tab(
-      v-for='tab in tabs'
-      :key='tab.id'
+.tabs--container
+  .tab(
+    v-for='tab in tabs'
+    :key='tab.id'
+  )
+    Tab(
+      :data='tab'
     )
-      Tab(
-        :data='tab'
-      )

@@ -1,20 +1,13 @@
-.tab--bar--container {
-  height: 100vh;
+.tabs--container {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
 
-  .tabs--container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 4rem;
-
-    background-color: white;
-    border-top: 1px solid grey;
-  }
+  background-color: $main-white;
+  border-top: 1px solid $main-grey;
 }

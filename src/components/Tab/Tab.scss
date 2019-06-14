@@ -8,11 +8,15 @@
     flex-direction: column;
 
     text-decoration: none;
-    color: #2c3e50;
-  }
+    color: $main-grey;
 
-  p {
-    padding: 0;
-    margin: 0;
+    p {
+      padding: 0;
+      margin: 0;
+      color: $main-grey;
+    }
+    .tabSelected {
+      color: $main-blue;
+    }
   }
 }
