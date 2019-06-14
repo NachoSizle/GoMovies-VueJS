@@ -1,0 +1,18 @@
+.tab--container {
+  cursor: pointer;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    text-decoration: none;
+    color: #2c3e50;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
