@@ -14,4 +14,17 @@
       color: #42b983;
     }
   }
+
+  .page--container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    &.min {
+      position: relative;
+      top: 3rem;
+      height: calc(100vh - 7rem);
+      overflow-y: scroll;
+    }
+  }
 }

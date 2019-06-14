@@ -1,5 +1,13 @@
 #app
   #nav
-    Header
-    TabBar
+    Header(
+      v-if='showHeader'
+    )
+    .page--container(
+      :class='{"min": showHeader}'
+    )
+      router-view
+    TabBar(
+      v-if='isLogged'
+    )
     
