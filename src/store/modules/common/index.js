@@ -5,7 +5,8 @@ export default {
     user: {
       uid: '',
       displayName: ''
-    }
+    },
+    showSpinner: false
   },
   mutations: {
     setToken (state, payload) {
@@ -30,13 +31,16 @@ export default {
         displayName: ''
       }
       localStorage.removeItem('user')
+    },
+    setSpinnerStatus (state, payload) {
+      state.showSpinner = payload
     }
   },
   actions: {
-    setToken ({ commit, state }, payload) {
+    setToken ({ commit }, payload) {
       commit('setToken', payload)
     },
-    setUser ({ commit, state }, payload) {
+    setUser ({ commit }, payload) {
       commit('setUser', payload)
     },
     removeToken ({ commit }) {
@@ -44,6 +48,9 @@ export default {
     },
     removeUser ({ commit }) {
       commit('removeUser')
+    },
+    setSpinnerStatus ({ commit }, payload) {
+      commit('setSpinnerStatus', payload)
     }
   },
   getters: {
@@ -52,6 +59,9 @@ export default {
     },
     isLogged (state) {
       return state.token !== ''
+    },
+    showSpinner (state) {
+      return state.showSpinner
     }
   }
 }

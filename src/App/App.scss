@@ -4,10 +4,20 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .spinner {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 1rem);
+  }
 }
 
 #nav {
   height: 100vh;
+
+  .showing--spinner {
+    opacity: 0.3;
+  }
 
   a {
     font-weight: bold;

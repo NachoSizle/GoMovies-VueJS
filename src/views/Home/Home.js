@@ -4,6 +4,11 @@ export default {
   name: 'Home',
   methods: {
     ...mapActions(
+      'common', [
+        'setSpinnerStatus'
+      ]
+    ),
+    ...mapActions(
       'userMovies', [
         'setMovies'
       ]
