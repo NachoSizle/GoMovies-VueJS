@@ -1,0 +1,40 @@
+.home {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  h1 {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .fav--media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    height: 300px;
+
+    .media {
+      width: 200px;
+      height: 100%;
+      margin-right: 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      .media--poster {
+        height: calc(100% - 5rem);
+        width: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

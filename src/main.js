@@ -24,11 +24,7 @@ Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
   console.debug(to)
-
-  if (to.name === 'login') {
-    next()
-    return
-  }
+  var userAuth = true
 
   var token = localStorage.getItem('token')
   if (!token || token === '') {
@@ -41,6 +37,17 @@ router.beforeEach((to, from, next) => {
   if (user && user !== '') {
     let userParsed = JSON.parse(user)
     store.dispatch('common/setUser', userParsed)
+  }
+
+  userAuth = token && token !== ''
+
+  if (to.name === 'login') {
+    if (userAuth) {
+      next({ name: 'home' })
+      return
+    }
+    next()
+    return
   }
 
   next()
