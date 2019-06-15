@@ -19,7 +19,12 @@ export default {
           console.debug(result)
           if (token && token !== '') {
             vm.setToken(token)
-            vm.setUser(result.user)
+            let user = {
+              uid: result.user.uid,
+              name: result.user.displayName,
+              picture: result.additionalUserInfo.profile.picture
+            }
+            vm.setUser(user)
             vm.$router.push({ name: 'home' })
           }
         }

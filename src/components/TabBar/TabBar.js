@@ -10,15 +10,15 @@ export default {
       tabs: [
         {
           id: 0,
-          title:'Home',
+          title: 'Home',
           to: '/',
-          icon: 'igloo-solid'
+          icon: 'star-regular',
         },
         {
           id: 1,
-          title:'Settings',
+          title: 'Settings',
           to: '/settings',
-          icon: 'user-cog-solid'
+          icon: 'settings'
         }
       ]
     }

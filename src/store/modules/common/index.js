@@ -2,7 +2,12 @@ export default {
   namespaced: true,
   state: {
     token: '',
-    user: null
+    user: {
+      uid: '',
+      displayName: '',
+      picture: ''
+    },
+    showSpinner: false
   },
   mutations: {
     setToken (state, payload) {
@@ -10,21 +15,35 @@ export default {
       localStorage.setItem('token', payload)
     },
     setUser (state, payload) {
-      state.user = payload
+      state.user = {
+        uid: payload.uid,
+        displayName: payload.displayName,
+        picture: payload.picture
+      }
+      let userParsed = JSON.stringify(payload)
+      localStorage.setItem('user', userParsed)
     },
     removeToken (state) {
       state.token = ''
       localStorage.removeItem('token')
     },
     removeUser (state) {
-      state.user = null
+      state.user = {
+        uid: '',
+        displayName: '',
+        picture: ''
+      }
+      localStorage.removeItem('user')
+    },
+    setSpinnerStatus (state, payload) {
+      state.showSpinner = payload
     }
   },
   actions: {
-    setToken ({ commit, state }, payload) {
+    setToken ({ commit }, payload) {
       commit('setToken', payload)
     },
-    setUser ({ commit, state }, payload) {
+    setUser ({ commit }, payload) {
       commit('setUser', payload)
     },
     removeToken ({ commit }) {
@@ -32,11 +51,20 @@ export default {
     },
     removeUser ({ commit }) {
       commit('removeUser')
+    },
+    setSpinnerStatus ({ commit }, payload) {
+      commit('setSpinnerStatus', payload)
     }
   },
   getters: {
+    userId (state) {
+      return state.user.uid
+    },
     isLogged (state) {
       return state.token !== ''
+    },
+    showSpinner (state) {
+      return state.showSpinner
     }
   }
 }

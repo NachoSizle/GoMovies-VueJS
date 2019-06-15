@@ -12,7 +12,7 @@ export default {
           id: 0,
           title:'',
           to: '/',
-          icon: 'search-solid'
+          icon: 'search'
         }
       ]
     }

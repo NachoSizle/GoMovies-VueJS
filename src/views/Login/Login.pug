@@ -1,6 +1,9 @@
 .login--container
   h1 Login
-  .button.primary(
+  .button.primary.icon--left(
     @click='loginWithGoogle'
   )
-    | Login
+    svgicon(
+      icon="google-color"
+    )
+    span Login

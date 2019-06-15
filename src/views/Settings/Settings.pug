@@ -1,6 +1,9 @@
 .settings--container
   h1 Settings
-  .button.danger(
+  .button.danger.icon--right(
     @click='logout'
   )
-    | Log out
+    span Log out
+    svgicon(
+      icon="sign-out"
+    )

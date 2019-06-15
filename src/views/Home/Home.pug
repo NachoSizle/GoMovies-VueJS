@@ -1,9 +1,24 @@
 .home
-  img(
-    alt='Vue Logo'
-    src='@/assets/logo.png'
-  )
+  .fav--movies
+    h1 Favorites Movies
+    .fav--media
+      .media(
+        v-for='movie in userMovies.favorites'
+        :key='movie.uid'
+      )
+        .media--poster(
+          :style='{ backgroundImage: "url(" + movie.Poster + ")" }'
+        )
+        p {{ movie.Title }}
 
-  HelloWorld(
-    msg='Welcome to Your Vue.js App'
-  )
+  .fav--series
+    h1 Favorites Series
+    .fav--media
+      .media(
+        v-for='serie in userSeries.favorites'
+        :key='serie.uid'
+      )
+        .media--poster(
+          :style='{ backgroundImage: "url(" + serie.Poster + ")" }'
+        )
+        p {{ serie.Title }}
