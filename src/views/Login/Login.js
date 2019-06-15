@@ -21,8 +21,9 @@ export default {
             vm.setToken(token)
             let user = {
               uid: result.user.uid,
-              name: result.user.displayName,
-              picture: result.additionalUserInfo.profile.picture
+              name: result.additionalUserInfo.profile.name,
+              picture: result.additionalUserInfo.profile.picture,
+              email: result.additionalUserInfo.profile.email
             }
             vm.setUser(user)
             vm.$router.push({ name: 'home' })

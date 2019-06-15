@@ -1,7 +1,19 @@
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+
+import Profile from '@/components/Profile/Profile.vue';
 
 export default {
   name: 'Settings',
+  components: {
+    Profile
+  },
+  computed: {
+    ...mapGetters({
+      userName: 'common/userName',
+      userEmail: 'common/userEmail',
+      userPicture: 'common/userPicture'
+    })
+  },
   methods: {
     ...mapActions(
       'common', [

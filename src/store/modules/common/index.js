@@ -5,7 +5,8 @@ export default {
     user: {
       uid: '',
       displayName: '',
-      picture: ''
+      picture: '',
+      email: ''
     },
     showSpinner: false
   },
@@ -17,8 +18,9 @@ export default {
     setUser (state, payload) {
       state.user = {
         uid: payload.uid,
-        displayName: payload.displayName,
-        picture: payload.picture
+        displayName: payload.name,
+        picture: payload.picture,
+        email: payload.email
       }
       let userParsed = JSON.stringify(payload)
       localStorage.setItem('user', userParsed)
@@ -31,7 +33,8 @@ export default {
       state.user = {
         uid: '',
         displayName: '',
-        picture: ''
+        picture: '',
+        email: ''
       }
       localStorage.removeItem('user')
     },
@@ -59,6 +62,15 @@ export default {
   getters: {
     userId (state) {
       return state.user.uid
+    },
+    userName (state) {
+      return state.user.displayName
+    },
+    userEmail (state) {
+      return state.user.email
+    },
+    userPicture (state) {
+      return state.user.picture
     },
     isLogged (state) {
       return state.token !== ''

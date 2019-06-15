@@ -1,0 +1,34 @@
+.profile--container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  height: calc(100% - 15rem);
+
+  .personal--data {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    
+    .profile--info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+  
+      padding: 0.5rem;
+  
+      h2 {
+        padding: 0;
+        margin: 0;
+      }
+  
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.profile--container
+  .personal--data
+    avatar(
+      :width='userPictureWidth'
+      :height='userPictureHeight'
+      :source='userPicture'
+    )
+    .profile--info
+      h2 {{ userName }}
+      p {{ userEmail }}
