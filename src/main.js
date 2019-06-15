@@ -8,9 +8,7 @@ import VueSVGIcon from 'vue-svgicon'
 
 Vue.use(VueSVGIcon)
 
-import '@/compiled-icons/igloo-solid';
-import '@/compiled-icons/user-cog-solid';
-import '@/compiled-icons/search-solid';
+import '@/compiled-icons/index.js';
 
 import firebase from 'firebase';
 import config from '@/settings/firebase-config.js';
@@ -25,6 +23,11 @@ Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {
   console.debug(to)
   var userAuth = true
+
+  if (to.name === 'login') {
+    next()
+    return
+  }
 
   var token = localStorage.getItem('token')
   if (!token || token === '') {

@@ -1,4 +1,6 @@
 /* eslint-disable */
-require('./igloo-solid')
-require('./search-solid')
-require('./user-cog-solid')
+require('./google-color')
+require('./search')
+require('./settings')
+require('./sign-out')
+require('./star-regular')

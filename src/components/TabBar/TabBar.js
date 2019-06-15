@@ -12,13 +12,13 @@ export default {
           id: 0,
           title: 'Home',
           to: '/',
-          icon: 'igloo-solid',
+          icon: 'star-regular',
         },
         {
           id: 1,
           title: 'Settings',
           to: '/settings',
-          icon: 'user-cog-solid'
+          icon: 'settings'
         }
       ]
     }
