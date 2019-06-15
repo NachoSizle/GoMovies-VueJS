@@ -16,11 +16,13 @@ export default {
       this.$firebase.auth().signInWithPopup(provider).then(function(result) {
         if (result && Object.keys(result).length > 0 && result.credential) {
           var token = result.credential.accessToken;
+          console.debug(result)
           if (token && token !== '') {
             vm.setToken(token)
             let user = {
               uid: result.user.uid,
-              name: result.user.displayName
+              name: result.user.displayName,
+              picture: result.additionalUserInfo.profile.picture
             }
             vm.setUser(user)
             vm.$router.push({ name: 'home' })
