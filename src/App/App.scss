@@ -4,14 +4,39 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .spinner {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 1rem);
+  }
 }
 
 #nav {
+  height: 100vh;
+
+  .showing--spinner {
+    opacity: 0.3;
+  }
+
   a {
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
       color: #42b983;
+    }
+  }
+
+  .page--container {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+
+    &.min {
+      position: relative;
+      top: 3rem;
+      height: calc(100vh - 7rem);
+      overflow-y: scroll;
     }
   }
 }

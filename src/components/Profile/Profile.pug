@@ -1,0 +1,43 @@
+.profile--container
+  .personal--data
+    avatar(
+      :width='userPictureWidth'
+      :height='userPictureHeight'
+      :source='userPicture'
+    )
+    .profile--info
+      h2 {{ userName }}
+      p {{ userEmail }}
+  .profile--data
+    h3 Favorites
+    .profile--data--header
+      h4(
+        :class='{"selected": favoritesSelected === "userMovies"}'
+        @click='selectFavorites("userMovies")'
+      ) 
+        .header--title
+          h5 Movies
+          .num--media
+            span(
+              v-if='userMovies.favorites && Object.keys(userMovies.favorites).length > 0'
+            ) {{ Object.keys(userMovies.favorites).length }}
+      h4(
+        :class='{"selected": favoritesSelected === "userSeries"}'
+        @click='selectFavorites("userSeries")'
+      ) 
+        .header--title
+          h5 Series
+          .num--media
+            span(
+              v-if='userSeries.favorites && Object.keys(userSeries.favorites).length > 0'
+            ) {{ Object.keys(userSeries.favorites).length }}
+    .profile--data--content
+      .fav--media
+        .media(
+          v-for='movie in mediaSelected'
+          :key='movie.uid'
+        )
+          .media--poster(
+            :style='{ backgroundImage: "url(" + movie.Poster + ")" }'
+          )
+          p {{ movie.Title }}

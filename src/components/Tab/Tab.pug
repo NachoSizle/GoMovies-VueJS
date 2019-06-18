@@ -1,0 +1,15 @@
+.tab--container
+  routerLink(
+    :to='data.to'
+  )
+    svgicon(
+      v-if='data.icon && data.icon !== ""'
+      :icon="data.icon"
+      width="1.5rem"
+      height="1.5rem"
+      :color='tabSelected ? "#48a7f9" : "#000000"'
+    )
+    p(
+      v-if='data.title && data.title !== ""'
+      :class='{"tabSelected": tabSelected}'
+    ) {{ data.title }}

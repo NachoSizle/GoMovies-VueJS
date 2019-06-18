@@ -1,7 +1,7 @@
 import Tab from '@/components/Tab/Tab.vue';
 
 export default {
-  name: 'TabBar',
+  name: 'Header',
   components: {
     Tab
   },
@@ -10,15 +10,9 @@ export default {
       tabs: [
         {
           id: 0,
-          title: 'Home',
+          title:'',
           to: '/',
-          icon: 'star-regular',
-        },
-        {
-          id: 1,
-          title: 'Settings',
-          to: '/settings',
-          icon: 'settings'
+          icon: 'search'
         }
       ]
     }

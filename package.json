@@ -5,14 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
     "@vue/eslint-config-standard": "^4.0.0",
     "core-js": "^2.6.5",
+    "firebase": "^6.2.0",
     "pug-cli": "^1.0.0-alpha6",
     "pug-plain-loader": "^1.0.0",
     "vue": "^2.6.10",
+    "vue-loading-spinner": "^1.0.11",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -27,6 +30,7 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
+    "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.6.10"
   }
 }

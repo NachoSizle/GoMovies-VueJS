@@ -1,0 +1,18 @@
+.settings--container
+  h1 Settings
+  profile(
+    :userName='userName'
+    :userEmail='userEmail'
+    :userPicture='userPicture'
+    :userPictureWidth=5
+    :userPictureHeight=5
+  )
+
+  .logout--container
+    .button.danger.icon--right(
+      @click='logout'
+    )
+      span Log out
+      svgicon(
+        icon="sign-out"
+      )

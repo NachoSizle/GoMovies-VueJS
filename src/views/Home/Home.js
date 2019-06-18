@@ -1,9 +1,34 @@
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
+  name: 'Home',
+  methods: {
+    ...mapActions(
+      'common', [
+        'setSpinnerStatus'
+      ]
+    ),
+    ...mapActions(
+      'userMovies', [
+        'setMovies'
+      ]
+    ),
+    ...mapActions(
+      'userSeries', [
+        'setSeries'
+      ]
+    )
+  },
+  computed: {
+    ...mapGetters({
+      userId: 'common/userId',
+      userMovies: 'userMovies/userMovies',
+      userSeries: 'userSeries/userSeries'
+    })
+  },
+  created () {
+    let vm = this
+    vm.$fbServices.Movies.getUserMovies(vm, vm.userId)
+    vm.$fbServices.Series.getUserSeries(vm, vm.userId)
   }
 }

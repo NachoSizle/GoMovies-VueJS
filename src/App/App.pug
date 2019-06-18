@@ -1,4 +1,16 @@
 #app
   #nav
-    TabBar
+    Header(
+      v-if='showHeader'
+    )
+    .page--container(
+      :class='{"min": showHeader, "showing--spinner": showSpinner }'
+    )
+      router-view
+    TabBar(
+      v-if='isLogged'
+    )
+  hexagon(
+    v-show='showSpinner'
+  )
     

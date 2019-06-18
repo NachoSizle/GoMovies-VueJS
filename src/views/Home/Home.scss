@@ -1,0 +1,46 @@
+.home {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  h1 {
+    text-align: left;
+    margin: 0.5rem 0;
+    font-weight: 900;
+  }
+
+  .fav--media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    height: 280px;
+    padding-bottom: 2rem;
+
+    .media {
+      width: 200px;
+      height: 100%;
+      margin-right: 0.5rem;
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      .media--poster {
+        height: calc(100% - 3rem);
+        width: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
