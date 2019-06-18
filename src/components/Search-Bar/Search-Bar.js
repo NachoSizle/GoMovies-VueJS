@@ -5,6 +5,7 @@ export default {
   data: () => {
     return {
       onSearching: false,
+      searchQuery: '',
       resultsMedia: []
     }
   },
@@ -14,6 +15,10 @@ export default {
   methods: {
     search () {
       console.debug('SEARCH')
-    } 
+    },
+    cancelSearching () {
+      this.searchQuery = ''
+      this.onSearching = false
+    }
   }
 }

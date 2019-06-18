@@ -8,13 +8,14 @@
         color="#000000"
       )
       input(
+        v-model='searchQuery'
         type='text'
         placeholder='Buscar'
         @focus='onSearching = true'
-        @blur='onSearching = false'
       )
     .cancel--container
-      p(
+      .cancel--button(
+        @click='cancelSearching'
         v-show='onSearching'
       )
         | Cancelar
@@ -31,4 +32,4 @@
     img(
       src="@/assets/Empty.png"
     )
-    h1 Sin resultados
+    h2 Sin resultados
