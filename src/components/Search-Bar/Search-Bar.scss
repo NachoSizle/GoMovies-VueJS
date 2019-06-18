@@ -1,0 +1,36 @@
+.search--bar--container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  .input--search {
+    height: 2.5rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $main-grey;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    input {
+      width: 85%;
+      height: 100%;
+      border-radius: 0%;
+      border: 1px solid $main-grey;
+      padding: 0 0.5rem;
+      font-size: 0.8rem;
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
