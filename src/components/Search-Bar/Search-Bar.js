@@ -4,6 +4,7 @@ export default {
   name: 'Search--Bar',
   data: () => {
     return {
+      onSearching: false,
       resultsMedia: []
     }
   },
