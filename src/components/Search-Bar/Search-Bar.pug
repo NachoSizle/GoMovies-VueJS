@@ -11,3 +11,12 @@
       height="1.5rem"
       color="#000000"
     )
+  .results--container
+    search-row(
+      v-if='mediaResults.length === 0'
+      v-for='media in resultsMedia'
+      :key='media.id'
+    )
+    .no-result-media(
+      v-else
+    )
