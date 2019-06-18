@@ -16,6 +16,12 @@ export default {
         },
         {
           id: 1,
+          title: 'Search',
+          to: '/search',
+          icon: 'search'
+        },
+        {
+          id: 2,
           title: 'Settings',
           to: '/settings',
           icon: 'settings'
